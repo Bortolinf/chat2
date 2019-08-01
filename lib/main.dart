@@ -52,7 +52,8 @@ void _sendMessage({String text, String imgUrl}){
       "text" : text,
       "imgUrl" : imgUrl,
       "senderName" : googleSignin.currentUser.displayName,
-      "senderPhotoUrl" : googleSignin.currentUser.photoUrl
+      "senderPhotoUrl" : googleSignin.currentUser.photoUrl,
+      "senderDate": new DateTime.now().toIso8601String()
     });
 }
 
@@ -98,7 +99,7 @@ class _ChatScreenState extends State<ChatScreen> {
           children: <Widget>[
             Expanded(
               child: StreamBuilder(
-                stream: Firestore.instance.collection("messages").snapshots(),
+                stream: Firestore.instance.collection("messages").orderBy("senderDate").snapshots(),
                 builder: (context, snapshot) {
                     switch(snapshot.connectionState){
                       case ConnectionState.none:
@@ -111,7 +112,9 @@ class _ChatScreenState extends State<ChatScreen> {
                           reverse: true,
                           itemCount: snapshot.data.documents.length,
                           itemBuilder: (BuildContext context, int index) {
-                            return ChatMessage(snapshot.data.documents[index].data);
+                            List r = snapshot.data.documents.reversed.toList(); // cria uma lista inverterndo a ordem dos campos
+                            return ChatMessage(r[index].data);
+                          //  return ChatMessage(snapshot.data.documents[index].data);
                           },);
                     }
                 },
