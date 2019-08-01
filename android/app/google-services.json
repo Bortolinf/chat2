@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "752371131201",
+    "firebase_url": "https://chat2-5abb3.firebaseio.com",
+    "project_id": "chat2-5abb3",
+    "storage_bucket": "chat2-5abb3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752371131201:android:6ba04e614a21923c",
+        "android_client_info": {
+          "package_name": "com.bortofurlanetto.chat2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "752371131201-s109l4bavsne51ovhm6tbnp1bboo3d64.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bortofurlanetto.chat2",
+            "certificate_hash": "0dfddf51c676345947393566bdab1e8f5524c617"
+          }
+        },
+        {
+          "client_id": "752371131201-iqclou6tvveoc1qmgllma9e9p9uul99g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzkdTPB48wRpOUqTA5oMpaw21LktNbbK0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "752371131201-iqclou6tvveoc1qmgllma9e9p9uul99g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
