@@ -129,6 +129,14 @@ class _TextComposerState extends State<TextComposer> {
   bool _isComposing = false;
   final _textController = TextEditingController();
 
+  void _reset () {
+    _textController.clear();
+    setState(() {
+      _isComposing = false; 
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return IconTheme(
@@ -157,6 +165,7 @@ class _TextComposerState extends State<TextComposer> {
                 },
                 onSubmitted:(text) { 
                   _handleSubmited(text);
+                  _reset();
                 }
               ),
             ),
@@ -169,6 +178,7 @@ class _TextComposerState extends State<TextComposer> {
                         onPressed: _isComposing
                             ? () {
                               _handleSubmited(_textController.text);
+                              _reset();
                             }
                             : null, // para o botao ficar desabilitado
                       )
@@ -177,6 +187,7 @@ class _TextComposerState extends State<TextComposer> {
                         onPressed: _isComposing
                             ? () {
                               _handleSubmited(_textController.text);
+                              _reset();
                             }
                             : null, // para o botao ficar desabilitado
                       )
